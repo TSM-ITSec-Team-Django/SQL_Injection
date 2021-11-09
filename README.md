@@ -4,7 +4,7 @@
 * Django is running on http://localhost:8000
 * There is a simple login interface based on https://learndjango.com/tutorials/django-login-and-logout-tutorial
 * This login interface is using Django's built-in user authentication system: [Link](https://docs.djangoproject.com/en/3.1/topics/auth/)
-* To log in use username admin and password postgres.
+* To log in use username ***admin*** and password ***postgres***
 * To add a new user, go to http://localhost:8000/admin and use the same credentials as above.
 
 ## Connect to PostgresDB
