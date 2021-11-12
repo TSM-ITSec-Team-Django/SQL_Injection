@@ -1,19 +1,5 @@
 # SQL Injection
 
-## Connect to Django Project
-* Django is running on http://localhost:8000
-* There is a simple login interface based on https://learndjango.com/tutorials/django-login-and-logout-tutorial
-* This login interface is using Django's built-in user authentication system: [Link](https://docs.djangoproject.com/en/3.1/topics/auth/)
-* To log in use username ***admin*** and password ***postgres***
-* To add a new user, go to http://localhost:8000/admin and use the same credentials as above.
-
-## Connect to PostgresDB
-* Host: localhost
-* Name: postgres
-* User: postgres
-* Password: postgres
-* Port: 5432
-
 ## Set up Docker environment
 ### Install git
 1. Visit: https://git-scm.com/downloads
@@ -73,4 +59,17 @@
    docker-compose up
    ```
 
+## Connect to Django Project
+* Django is running on http://localhost:8000
+* There is a simple login interface
+* There are 3 users that can be used to log in:
+| username      | password      |
+| ------------- |:-------------:|
+| admin         | password      |
+| alice         | 1234          |
+| bob           | 4321          |
 
+## SQL Injection
+* This login system is vulnerable to SQL injection
+* To perform a sql injection use the username ***[anything]' OR 1 = 1 --*** and ***[anything]*** as password
+* e.g. username ***alex' OR 1 = 1 --*** and ***123*** as password

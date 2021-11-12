@@ -5,12 +5,11 @@ services:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - "5432:5432"
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
