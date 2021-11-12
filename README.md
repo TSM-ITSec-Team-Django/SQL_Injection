@@ -63,11 +63,9 @@
 * Django is running on http://localhost:8000
 * There is a simple login interface
 * There are 3 users that can be used to log in:
-| username      | password      |
-| ------------- |:-------------:|
-| admin         | password      |
-| alice         | 1234          |
-| bob           | 4321          |
+* username ***admin*** and password ***password***
+* username ***alice*** and password ***1234***
+* username ***bob*** and password ***4321***
 
 ## SQL Injection
 * This login system is vulnerable to SQL injection
