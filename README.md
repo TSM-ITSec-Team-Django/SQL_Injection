@@ -68,6 +68,6 @@
 * username ***bob*** and password ***4321***
 
 ## SQL Injection
-* This login system is vulnerable to SQL injection
-* To perform a sql injection use the username ***[anything]' OR 1 = 1 --*** and ***[anything]*** as password
+* This login system is protected against SQL injection.
+* A sql-injection like the following will not work: username ***[anything]' OR 1 = 1 --*** and ***[anything]*** as password
 * e.g. username ***alex' OR 1 = 1 --*** and ***123*** as password
