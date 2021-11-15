@@ -1,14 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.hashers import make_password
 
 from .forms import Login
-from .rawsql import raw
 
-
-def login(request):
+def login_user(request):
     if request.method == 'POST':
-        form = Login(request.POST)
-        if (form.is_valid() and raw(form.cleaned_data['username'], form.cleaned_data['password']) != None):
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
             return HttpResponse('Successful login!')
         else:
             return HttpResponse('Error!')
